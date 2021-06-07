@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>{{paper.title}}</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for x in paper.questionList.all %}
+            <div class="container" style="border: 1px solid black;">
+            <p>{{x}}</p>
+            <input type="radio" name = "{{x.Question}}" value="A"> {{x.A}} </br>
+            <input type="radio" name = "{{x.Question}}" value="B"> {{x.B}} </br>
+            <input type="radio" name = "{{x.Question}}" value="C"> {{x.C}} </br>
+            <input type="radio" name = "{{x.Question}}" value="D"> {{x.D}} </br>
+            </div>
+            <br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for x in exams %}
+        <div class="container" style="border: 1px solid black;">
+            <p>{{x.title}}</p>
+            <a href="{% url 'attendpaper' x.pk %}">Give Assesment</a>
+        </div>
+        <br>
+    {% endfor %}
+
+{% endblock %}

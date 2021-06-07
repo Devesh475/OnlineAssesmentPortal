@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h3>Add Question</h3>
+    <div class="container" style="border: 1px solid black;">
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Add Question</button>
+        </form>
+    </div>
+{% endblock %}

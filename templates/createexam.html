@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <br>
+    <h3>Add QuestionPaper</h3>
+    <div class="container" style="border: 1px solid black;">
+        <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <a href="{% url 'addquestion' %}" class="btn btn-outline-warning">Add questions</a>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+    </div>
+{% endblock %}

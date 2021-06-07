@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Hello, people!</h1>
+    <p class="lead">This is a where you can attend multiple online mcq tests and check your scores.</p>
+    <hr class="my-4">
+    <p>This website is made using html css and django in backend.</p>
+    {% if not user.is_authenticated %}
+        <a class="btn btn-outline-secondary btn-lg" href="{% url 'login' %}" role="button">LogIn</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">SignUp</a>
+    {% endif %}
+</div>
+
+{% endblock %}

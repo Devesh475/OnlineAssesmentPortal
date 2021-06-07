@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for x in examsbystud %}
+    <div class="container" style="border: 1px solid black;">
+        <p>Title : {{x.quest.title}}</p>
+        <p>Marks Obtained : {{x.marksobtained}}</p>
+    </div>
+    <br>
+    {% endfor %}
+
+{% endblock %}
